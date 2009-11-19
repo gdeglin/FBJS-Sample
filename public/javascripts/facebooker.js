@@ -21,6 +21,8 @@ function getElementsByClass(classname) {
 }
 //function getElementsByTagName(tagName) -> native to FJBS
 
+var useLocal = false;
+
 extendInstance(Ajax, { //Extends the native Facebook Ajax object
     /*
      * Make a request to a remote server. Call the 'success' callback with the result.
@@ -29,6 +31,8 @@ extendInstance(Ajax, { //Extends the native Facebook Ajax object
     Load: function(response_type, action_path, callbacks, post_parameters) {
         callbacks = Ajax.checkCallbacks(callbacks);		
         var ajax = new Ajax();
+        ajax.useLocalProxy = useLocal;
+        
         switch(response_type) {
             case 'FBML':
                 ajax.responseType = Ajax.FBML;
