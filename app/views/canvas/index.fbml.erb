@@ -5,7 +5,6 @@
     <h1>fbjs sample application</h1>
   </div>
 
-
   <script>
     function ajax_plain_text(target_element) {
       Ajax.Update(target_element, 'RAW', '/ajax/server_time_raw', {begin: function(){start()}, complete:function(){end()}});
@@ -47,7 +46,7 @@
     <div>Use Local Proxy: <span id="uselocal">false</span></div>
     <input type="button" value="toggle local proxy" onclick="toggle_local_proxy()"/>
 
-    <div style="float:left" id="timer"/>
+    <div id="timer"/>
     
 
     <h3>Raw Text Ajax Response</h3>
