@@ -1,0 +1,190 @@
+/* leafy green - a free web template by spyka webmaster
+   http://www.spyka.net
+*/
+
+/* page */
+html, * {
+    padding:0;
+    margin:0;
+}
+body {
+    background-image:url('http://web1.tunnlr.com:10172/images/bodybg.jpg');
+    background-repeat:repeat-x;
+    background-color:#2D4C9A;
+    margin:40px auto 10px auto;
+    font-size:1.0em;
+    color:#303030;
+    font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+/* headers */
+h1 {
+    margin-top:-10px;
+    font-size:3.4em;
+    text-align:right;
+    color:#ffffff;
+}
+h2 {    
+    font-family:Geneva, Arial, Helvetica, sans-serif;
+    color:#20376D;
+}
+h3 {
+    margin-top:10px;
+    font-size:1.3em;
+    font-weight:normal;
+    color:#20376D;
+    border-bottom:1px solid #DDDDDD;
+}
+
+/* paragraphs */
+p {
+    margin:2px 0 15px 0;
+    line-height:1.3em;
+}
+
+/* links */
+a {
+    color:#253D7D;
+    text-decoration:none;
+    border-bottom:1px solid #96ACE0;
+}
+a:hover {
+    background-color:#CFD9F1;
+}
+div#footer a {
+    color:#666666;
+    border-bottom:1px solid #999999;
+}
+div#footer a:hover {
+    background-color:#DDDDDD;
+}
+
+/* lists */
+ul, ol {
+    margin:0 0 5px 30px;
+}
+
+/* code */
+code {
+    display:block;
+    border:1px solid #8BA043;
+    background-color:#C4D194;
+    padding:0px;
+    margin:5px;
+}
+
+/* forms */
+form {
+    padding:10px 0;
+    width:50%;
+}
+form fieldset {
+    border:none;
+    border-top:1px solid #CCCCCC;
+    border-bottom:1px solid #CCCCCC;
+    padding:5px;
+}
+form fieldset legend {
+    margin-left:-8px;
+    font-weight:bold;
+    color:#758738;
+    font-size:0.8em;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+form label {
+    font-weight:bold;
+}
+form input, form select, form textarea {
+    padding:4px;
+    color:#758738;
+    font-size:0.9em;
+    font-family:Georgia, "Times New Roman", Times, serif;
+}
+form input.button {
+    border:1px solid #8BA043;
+    border-right:1px solid #758738;
+    border-bottom:1px solid #758738;
+    font-weight:bold;
+    background-color:#C4D194;
+}
+
+/* container, header and nav */
+div#container {
+    background-color:#ffffff;
+    width:80%;
+    padding:5px;
+    margin:0 auto;
+}
+div#header {
+    background-image:url('http://web1.tunnlr.com:10172/images/headerbg.jpg');
+    background-repeat:repeat-x;
+    background-color:#000000;
+    height:120px;
+    padding:10px;
+}
+div#header p {
+    text-align:right;
+    padding:0;
+    margin:0;
+    font-size:0.8em;
+    color:#ffffff;
+    padding-top:60px;
+}
+div#nav {
+    background-image:url('http://web1.tunnlr.com:10172/images/navbg.jpg');
+    background-repeat:repeat-x;
+    height:50px;
+}
+div#nav ul {
+    margin:0;
+    padding:0;
+}
+div#nav ul li {
+    display:block;
+    float:left;
+    padding-right:10px;
+}
+div#nav ul li a {
+    float:left;
+    border:none;
+    padding:14px 10px;
+    height:22px;
+    font-weight:bold;
+    color:#FFFFFF;
+    text-decoration:none;
+    display:block;
+}
+div#nav ul li a:hover {
+    background-image:url('http://web1.tunnlr.com:10172/images/navbg_over.jpg');
+}
+
+/* content */
+div#content {
+    padding:20px 10px 0 10px;
+}
+
+/* footer */
+div#footer {
+    padding:5px;
+    border-top:1px solid #CCCCCC;
+}
+div#footer p {
+    font-size:0.8em;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    text-align:center;
+    margin:0;
+    padding:5px;
+}
+
+/* generic classes */
+.bold {
+    font-weight:bold;
+}
+
+.result {
+    display:block;
+    border:1px solid #333333;
+    background-color:#E5E5E5;
+    padding:0px;
+    margin:5px;
+}

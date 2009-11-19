@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="http://web1.tunnlr.com:10172/stylesheets/styles.css?a=6" type="text/css" />
+
+<div id="container">
+  <div id="header">    
+    <h1>fbjs sample application</h1>
+  </div>
+  
+  <script>
+    function ajax_plain_text(target_element) {
+      Ajax.Update(target_element, 'RAW', '/ajax/server_time_raw');
+    }
+
+    function ajax_fbml(target_element) {
+      Ajax.Update(target_element, 'FBML', '/ajax/server_time_fbml');
+    }
+
+    function ajax_json(target_element) {
+      Ajax.Load('JSON', '/ajax/server_time_json',
+      {
+        success:
+          function(result){
+            $(target_element).setInnerFBML(result.fbml_time)
+          }
+      });
+    }
+  </script>
+
+
+  <div id="content">    
+    <h2>FB Ajax without local proxy</h2>
+
+    <h3>Raw Text Ajax Response</h3>
+
+    <h4>Javascript:</h4>
+    <pre><code>
+    function ajax_plain_text(target_element) {
+      Ajax.Update(target_element, 'RAW', '/ajax/server_time_raw')
+    }
+    </code></pre>
+    <h4>Rails:</h4>
+    <pre><code>
+    def server_time_raw
+      render :text =&gt; Time.now.to_s
+    end
+    </code></pre>
+
+    <div class="result" id="plain"></div>
+    <input type="button" onclick="ajax_plain_text('plain')" value="Execute"/>
+
+    <h3>FBML Ajax Response</h3>
+
+    <h4>Javascript:</h4>
+    <pre><code>
+    function ajax_plain_text(target_element) {
+      Ajax.Update(target_element, 'FBML', '/ajax/server_time_raw')
+    }
+    </code></pre>
+    <h4>Rails:</h4>
+    <pre><code>
+    def server_time_fbml
+      render :text =&gt; &quot;&lt;span&gt;&lt;strong&gt;#{Time.now.to_s}&lt;/strong&gt;&lt;/span&gt;&quot;
+    end
+    </code></pre>
+    <div class="result" id="fbml"></div>
+    <input type="button" onclick="ajax_fbml('fbml')" value="Execute"/>
+
+    <h3>Json Ajax Response</h3>
+
+    <h4>Javascript:</h4>
+    <pre><code>
+    function ajax_json(target_element) {
+      Ajax.Load('JSON', '/ajax/server_time_json',
+      {
+        success:
+          function(result){
+            $(target_element).setInnerFBML(result.fbml_time)
+          }
+      });
+    }
+    </code></pre>
+    <h4>Rails:</h4>
+    <pre><code>
+    def server_time_json
+      render :json =&gt; { :fbml_time =&gt; Time.now.to_s }
+    end
+    </code></pre>
+
+    <div class="result" id="json"></div>
+    <input type="button" onclick="ajax_json('json')" value="Execute"/>
+    <!--
+    <p class="bold">Form:</p>
+    <form action="http://www.google.com" method="get">
+      <fieldset>
+        <legend>Form example</legend>
+        <p><label for="name">Name:</label><br />
+          <input type="text" name="name" value="" id="name" /></p>
+        <p><label for="message">Message:</label><br />
+          <textarea cols="40" rows="6" name="message" id="message"></textarea></p>
+        <p><input type="submit" value="Send" class="button" /></p>
+      </fieldset>
+    </form>
+    -->
+  </div>
+  <div id="footer">
+    <p>&copy; 2008 mySite. Design: <a href="http://www.spyka.net" title="spyka Webmaster">spyka webmaster</a> available from <a href="http://www.justfreetemplates.com" title="free web templates">Just Free Templates</a>. Valid <a href="http://validator.w3.org/check/referer" title="valid XHTML strict">XHTML</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer" title="CSS">CSS</a></p>
+  </div>
+
+</div>
