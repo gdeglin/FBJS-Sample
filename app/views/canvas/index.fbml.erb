@@ -26,6 +26,11 @@
       });
     }
 
+    function toggle_local_proxy() {
+      useLocal = !useLocal;
+      $('uselocal').setTextValue(useLocal);
+    }
+    
     var timer = 0;
     function start() {
       timer = new Date().getTime();
@@ -37,7 +42,11 @@
   </script>
   
   <div id="content">    
-    <h2>FB Ajax without local proxy</h2>
+    <h2>FB Ajax Examples</h2>
+
+    <div>Use Local Proxy: <span id="uselocal">false</span></div>
+    <input type="button" value="toggle local proxy" onclick="toggle_local_proxy()"/>
+
     <div style="float:left" id="timer"/>
     
 
