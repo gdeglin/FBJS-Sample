@@ -29,6 +29,7 @@ h2 {
     color:#20376D;
 }
 h3 {
+    clear:both;
     margin-top:10px;
     font-size:1.3em;
     font-weight:normal;
