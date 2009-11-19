@@ -1,4 +1,5 @@
 class AjaxController < ApplicationController
+  skip_before_filter :ensure_application_is_installed_by_facebook_user
   def server_time_raw
     render :text => Time.now.to_s
   end
