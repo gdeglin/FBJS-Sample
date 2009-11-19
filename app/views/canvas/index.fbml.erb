@@ -25,6 +25,17 @@
       });
     }
 
+    function ajax_json_localproxy(target_element) {
+      Ajax.Load('JSON', '/ajax/server_time_json',
+      {
+        success:
+          function(result){
+            $(target_element).setInnerXHTML("<span>"+result.fbml_time+"</span>")
+          },
+          begin: function(){start()}, complete:function(){end()}
+      });
+    }
+
     function toggle_local_proxy() {
       useLocal = !useLocal;
       $('uselocal').setTextValue(useLocal);
@@ -106,6 +117,32 @@
 
     <div class="result" id="json"></div>
     <input type="button" onclick="ajax_json('json')" value="Execute"/>
+
+        <h3>Json Ajax Response</h3>
+
+    <h4>FBML JSON With LocalProxy Support:</h4>
+    <pre><code>
+    function ajax_json_localproxy(target_element) {
+      Ajax.Load('JSON', '/ajax/server_time_json',
+      {
+        success:
+          function(result){
+            $(target_element).setInnerXHTML("<span>"+result.fbml_time+"</span>")
+          },
+          begin: function(){start()}, complete:function(){end()}
+      });
+    }
+    </code></pre>
+    <h4>Rails:</h4>
+    <pre><code>
+    def server_time_json
+      render :json =&gt; { :fbml_time =&gt; Time.now.to_s }
+    end
+    </code></pre>
+
+    <div class="result" id="lp_json"></div>
+    <input type="button" onclick="ajax_json_localproxy('lp_json')" value="Execute"/>
+
     <!--
     <p class="bold">Form:</p>
     <form action="http://www.google.com" method="get">
