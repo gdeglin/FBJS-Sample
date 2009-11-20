@@ -2,39 +2,31 @@
    http://www.spyka.net
 */
 
-/* page */
-html, * {
-    padding:0;
-    margin:0;
-}
-body {
-    background-image:url('http://web1.tunnlr.com:10172/images/bodybg.jpg');
-    background-repeat:repeat-x;
-    background-color:#2D4C9A;
-    margin:40px auto 10px auto;
-    font-size:1.0em;
-    color:#303030;
-    font-family:Georgia, "Times New Roman", Times, serif;
-}
-
 /* headers */
 h1 {
     margin-top:-10px;
-    font-size:3.4em;
+    font-size:4.4em;
     text-align:right;
     color:#ffffff;
 }
-h2 {    
+h2 {
     font-family:Geneva, Arial, Helvetica, sans-serif;
     color:#20376D;
 }
 h3 {
     clear:both;
     margin-top:10px;
-    font-size:1.3em;
+    font-size:4.3em;
     font-weight:normal;
     color:#20376D;
     border-bottom:1px solid #DDDDDD;
+}
+
+h4 {
+    margin-top:5px;
+    font-size:2.3em;
+    font-weight:normal;
+    font-weight:bold;
 }
 
 /* paragraphs */
@@ -72,6 +64,7 @@ code {
     background-color:#C4D194;
     padding:0px;
     margin:5px;
+    font-size:1.8em;
 }
 
 /* forms */
@@ -188,4 +181,9 @@ div#footer p {
     background-color:#E5E5E5;
     padding:0px;
     margin:5px;
+    font-size:2em;
+}
+
+#lp_toggle {
+    font-size:2em;
 }

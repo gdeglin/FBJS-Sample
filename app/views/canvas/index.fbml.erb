@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="http://web1.tunnlr.com:10172/stylesheets/styles.css?a=7" type="text/css" />
+<link rel="stylesheet" href="http://web1.tunnlr.com:10172/stylesheets/styles.css?a=9713" type="text/css" />
 
 <div id="container">
   <div id="header">    
-    <h1>fbjs sample application</h1>
+    <h1>fbjs sample app</h1>
   </div>
 
   <script>
@@ -50,28 +50,26 @@
     }    
   </script>
   
-  <div id="content">    
-    <h2>FB Ajax Examples</h2>
-
-    <div>Use Local Proxy: <span id="uselocal">false</span></div>
+  <div id="content">
+    <div id="lp_toggle">Use Local Proxy: <span id="uselocal">false</span></div>
     <input type="button" value="toggle local proxy" onclick="toggle_local_proxy()"/>
 
     <div id="timer"/>
     
-
-    <h3>Raw Text Ajax Response</h3>
+    <h3>Text Ajax Response</h3>
 
     <h4>Javascript:</h4>
     <pre><code>
-    function ajax_plain_text(target_element) {
-      Ajax.Update(target_element, 'RAW', '/ajax/server_time_raw')
-    }
+function ajax_plain_text(target_element) {
+  Ajax.Update(target_element, 'RAW',
+              '/ajax/server_time_raw')
+}
     </code></pre>
     <h4>Rails:</h4>
     <pre><code>
-    def server_time_raw
-      render :text =&gt; Time.now.to_s
-    end
+def server_time_raw
+  render :text =&gt; Time.now.to_s
+end
     </code></pre>
 
     <div class="result" id="plain"></div>
@@ -81,38 +79,43 @@
 
     <h4>Javascript:</h4>
     <pre><code>
-    function ajax_plain_text(target_element) {
-      Ajax.Update(target_element, 'FBML', '/ajax/server_time_raw')
-    }
+function ajax_plain_text(target_element) {
+  Ajax.Update(target_element, 'FBML',
+              '/ajax/server_time_raw')
+}
     </code></pre>
     <h4>Rails:</h4>
     <pre><code>
-    def server_time_fbml
-      render :text =&gt; &quot;&lt;span&gt;&lt;strong&gt;#{Time.now.to_s}&lt;/strong&gt;&lt;/span&gt;&quot;
-    end
+def server_time_fbml
+  render :text =&gt; &quot;&lt;span&gt;&lt;strong&gt;
+         #{Time.now.to_s}
+         &lt;/strong&gt;&lt;/span&gt;&quot;
+end
     </code></pre>
     <div class="result" id="fbml"></div>
     <input type="button" onclick="ajax_fbml('fbml')" value="Execute"/>
 
-    <h3>Json Ajax Response</h3>
+    <h3>JSON Ajax Response</h3>
 
     <h4>Javascript:</h4>
     <pre><code>
-    function ajax_json(target_element) {
-      Ajax.Load('JSON', '/ajax/server_time_json',
-      {
-        success:
-          function(result){
-            $(target_element).setInnerFBML(result.fbml_time)
-          }
-      });
-    }
+function ajax_json(target_element) {
+  Ajax.Load('JSON', '/ajax/server_time_json',
+  {
+    success:
+      function(result){
+        $(target_element)
+          .setInnerFBML(result.fbml_time)
+      }
+  });
+}
     </code></pre>
     <h4>Rails:</h4>
     <pre><code>
-    def server_time_json
-      render :json =&gt; { :fbml_time =&gt; Time.now.to_s }
-    end
+def server_time_json
+  render :json =&gt; { :fbml_time =&gt;
+                       Time.now.to_s }
+end
     </code></pre>
 
     <div class="result" id="json"></div>
@@ -122,22 +125,23 @@
 
     <h4>FBML JSON With LocalProxy Support:</h4>
     <pre><code>
-    function ajax_json_localproxy(target_element) {
-      Ajax.Load('JSON', '/ajax/server_time_json',
-      {
-        success:
-          function(result){
-            $(target_element).setInnerXHTML("<span>"+result.fbml_time+"</span>")
-          },
-          begin: function(){start()}, complete:function(){end()}
-      });
-    }
+function ajax_json_localproxy(target_element) {
+  Ajax.Load('JSON', '/ajax/server_time_json',
+  {
+    success:
+      function(result){
+        $(target_element)
+          .setInnerXHTML("<span>"+result.fbml_time+"</span>")
+      }
+  });
+}
     </code></pre>
     <h4>Rails:</h4>
     <pre><code>
-    def server_time_json
-      render :json =&gt; { :fbml_time =&gt; Time.now.to_s }
-    end
+def server_time_json
+  render :json =&gt; { :fbml_time =&gt;
+                        Time.now.to_s }
+end
     </code></pre>
 
     <div class="result" id="lp_json"></div>
