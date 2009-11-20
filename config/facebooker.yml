@@ -1,0 +1,17 @@
+production:
+  api_key: 11fad44070163d6f31a17ea19a0127b3
+  secret_key: 47248489507e18a5173e5388afc3b4ed
+  canvas_page_name: hfbjssample
+  callback_url: http://fbjs.inigral.com
+
+development:
+  api_key: 71e9867626729fe628eab19f054ae3a9
+  secret_key: 7e19b9b647d97714c67d850041f0ea96
+  canvas_page_name: fbjssample
+  callback_url: http://web1.tunnlr.com:10172
+
+test:
+  api_key: 06565c8dc05254276bcffcff049f604b
+  secret_key: e2b8451c62b3c84fa0e014d0dc63363f
+  canvas_page_name: benchmark
+  callback_url: http://web1.tunnlr.com:10172
