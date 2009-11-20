@@ -2,7 +2,7 @@ production:
   api_key: 11fad44070163d6f31a17ea19a0127b3
   secret_key: 47248489507e18a5173e5388afc3b4ed
   canvas_page_name: hfbjssample
-  callback_url: http://fbjs.inigral.com
+  callback_url: http://gentle-autumn-49.heroku.com
 
 development:
   api_key: 71e9867626729fe628eab19f054ae3a9
